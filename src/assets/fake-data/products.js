@@ -13,7 +13,7 @@ import product_03_image_03 from "../images/product_3.3.jpg";
 
 import product_04_image_01 from "../images/product_4.1.jpg";
 import product_04_image_02 from "../images/product_4.2.jpg";
-import product_04_image_03 from "../images/product_4.3.jpg";
+import product_04_image_03 from "../images/product_4.3.png";
 
 import product_05_image_01 from "../images/product_04.jpg";
 import product_05_image_02 from "../images/product_08.jpg";
@@ -27,7 +27,7 @@ const products = [
   {
     id: "01",
     title: "Chicken Burger",
-    price: 24.0,
+    price: 650,
     image01: product_01_image_01,
     image02: product_01_image_02,
     image03: product_01_image_03,
@@ -39,7 +39,7 @@ const products = [
   {
     id: "02",
     title: "Vegetarian Pizza",
-    price: 115.0,
+    price: 1100,
     image01: product_02_image_01,
     image02: product_02_image_02,
     image03: product_02_image_03,
@@ -51,7 +51,7 @@ const products = [
   {
     id: "03",
     title: "Double Cheese Margherita",
-    price: 110.0,
+    price: 750,
     image01: product_03_image_01,
     image02: product_03_image_02,
     image03: product_03_image_03,
@@ -63,7 +63,7 @@ const products = [
   {
     id: "04",
     title: "Maxican Green Wave",
-    price: 110.0,
+    price: 1000,
     image01: product_04_image_01,
     image02: product_04_image_02,
     image03: product_04_image_03,
@@ -75,7 +75,7 @@ const products = [
   {
     id: "05",
     title: "Cheese Burger",
-    price: 24.0,
+    price: 700,
     image01: product_05_image_01,
     image02: product_05_image_02,
     image03: product_05_image_03,
@@ -86,7 +86,7 @@ const products = [
   {
     id: "06",
     title: "Royal Cheese Burger",
-    price: 24.0,
+    price: 670,
     image01: product_01_image_01,
     image02: product_01_image_02,
     image03: product_01_image_03,
@@ -98,7 +98,7 @@ const products = [
   {
     id: "07",
     title: "Seafood Pizza",
-    price: 115.0,
+    price: 700,
     image01: product_02_image_02,
     image02: product_02_image_01,
     image03: product_02_image_03,
@@ -110,7 +110,7 @@ const products = [
   {
     id: "08",
     title: "Thin Cheese Pizza",
-    price: 110.0,
+    price: 1200,
     image01: product_03_image_02,
     image02: product_03_image_01,
     image03: product_03_image_03,
@@ -122,7 +122,7 @@ const products = [
   {
     id: "09",
     title: "Pizza With Mushroom",
-    price: 110.0,
+    price: 1200,
     image01: product_04_image_02,
     image02: product_04_image_01,
     image03: product_04_image_03,
@@ -134,7 +134,7 @@ const products = [
   {
     id: "10",
     title: "Classic Hamburger",
-    price: 24.0,
+    price: 600,
     image01: product_05_image_02,
     image02: product_05_image_01,
     image03: product_05_image_03,
@@ -146,7 +146,7 @@ const products = [
   {
     id: "11",
     title: "Crunchy Bread ",
-    price: 35.0,
+    price: 300,
     image01: product_06_image_01,
     image02: product_06_image_02,
     image03: product_06_image_03,
@@ -158,7 +158,7 @@ const products = [
   {
     id: "12",
     title: "Delicious Bread ",
-    price: 35.0,
+    price: 350,
     image01: product_06_image_02,
     image02: product_06_image_01,
     image03: product_06_image_03,
@@ -170,7 +170,7 @@ const products = [
   {
     id: "13",
     title: "Loaf Bread ",
-    price: 35.0,
+    price: 400,
     image01: product_06_image_03,
     image02: product_06_image_02,
     image03: product_06_image_03,

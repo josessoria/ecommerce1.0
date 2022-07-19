@@ -28,8 +28,6 @@ import networkImg from "../assets/images/network.png";
 
 import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
-
-
 const featureData = [
   {
     title: "Entrega Comoda",
@@ -99,7 +97,7 @@ const Home = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
                   facilis.
                 </p>
-                <div className="hero_btns d-flex align-items-center gap-5 mt-4">
+                <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
                     Pedir Ya! <i className="ri-arrow-right-s-line"></i>
                   </button>
@@ -157,7 +155,7 @@ const Home = () => {
             </Col>
 
             {featureData.map((item, index) => (
-              <Col lg="4" md="4" key={index} className="mt-5">
+              <Col lg="4" md="4" sm="6" xs="6" key={index} className="mt-5">
                 <div className="feature__item text-center px-5 py-3">
                   <img
                     src={item.imgUrl}
@@ -180,7 +178,7 @@ const Home = () => {
               <h2> Comidas Favoritas </h2>
             </Col>
             <Col lg="12">
-              <div className="food_category d-flex align-items-center justify-content-center gap-5">
+              <div className="food_category d-flex align-items-center justify-content-center gap-4">
                 <button
                   className={`all__btn ${
                     category === "ALL" ? `foodBtnActive` : ""
@@ -219,7 +217,7 @@ const Home = () => {
               </div>
             </Col>
             {allProducts.map((item) => (
-              <Col lg="3" md="4" key={item.id} className="mt-5">
+              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                 <ProductCard item={item} />
               </Col>
             ))}
@@ -227,7 +225,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section>
+      <section className="why__choose-us">
         <Container>
           <Row>
             <Col lg="6" md="6">
@@ -245,7 +243,7 @@ const Home = () => {
                   maiores atque magnam laborum fuga illum?
                 </p>
 
-                <ListGroup className="mt-5">
+                <ListGroup className="mt-4">
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
                       <i className="ri-checkbox-circle-line"> </i>
@@ -284,17 +282,19 @@ const Home = () => {
       </section>
 
       <section className="pt-0">
-        <Row>
-          <Col lg="12" className="text-center mb-5">
-            <h2>Hot Pizza</h2>
-          </Col>
-
-          {hotPizza.map((item) => (
-            <Col lg="3" md="4" key={item.id}>
-              <ProductCard item={item} />
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center mb-5">
+              <h2>Hot Pizza</h2>
             </Col>
-          ))}
-        </Row>
+
+            {hotPizza.map((item) => (
+              <Col lg="3" md="4" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </section>
 
       <section>
@@ -302,14 +302,20 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="testimonial mb-5">
-                <h5 className="testimonial__subtitle">Testimonios</h5>
-                <h2 className="testimonial__title mb-4">Lo que se habla <span> de nosotros</span>:</h2>
-                <p className="testimonial__desc mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facere illum totam et perferendis molestiae eum fugit hic quas voluptatum.</p>
-                <TestimonialSlider/>
+                <h5 className="testimonial__subtitle mb-4">Testimonios</h5>
+                <h2 className="testimonial__title mb-4">
+                  Lo que se habla <span> de nosotros</span>:
+                </h2>
+                <p className="testimonial__desc mb-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque facere illum totam et perferendis molestiae eum fugit
+                  hic quas voluptatum.
+                </p>
+                <TestimonialSlider />
               </div>
             </Col>
             <Col lg="6" md="6">
-              <img src={networkImg} alt="testimonial-img" className="w-100"/>
+              <img src={networkImg} alt="testimonial-img" className="w-100" />
             </Col>
           </Row>
         </Container>

@@ -4,6 +4,8 @@ import ava01 from "../../../assets/images/ava-1.jpg";
 import ava02 from "../../../assets/images/ava-2.jpg";
 import ava03 from "../../../assets/images/ava-3.jpg";
 
+import "../../../styles/slider.scss"
+
 const TestimonialSlider = () => {
   const settings = {
     dots: true,
@@ -17,13 +19,13 @@ const TestimonialSlider = () => {
   };
   return (
     <Slider {...settings}>
-      <div>
+      <div class>
         <p className="review__text">
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
           quas ea natus culpa neque odio earum? Nemo quae non omnis aliquid,
           magni vero asperiores id ipsum accusamus repudiandae odit odio?"
         </p>
-        <div className="d-flex align-items-center gap-3"> 
+        <div className="slider__content d-flex align-items-center gap-3"> 
           <img src={ava01} alt="avatar" className="rounded" />
           <h6>Jhon Doe</h6>
         </div>
@@ -34,7 +36,7 @@ const TestimonialSlider = () => {
           quas ea natus culpa neque odio earum? Nemo quae non omnis aliquid,
           magni vero asperiores id ipsum accusamus repudiandae odit odio?"
         </p>
-        <div className="d-flex align-items-center gap-3">
+        <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava02} alt="avatar" className="rounded" />
           <h6>Mitchell Marsh</h6>
         </div>
@@ -45,7 +47,7 @@ const TestimonialSlider = () => {
           quas ea natus culpa neque odio earum? Nemo quae non omnis aliquid,
           magni vero asperiores id ipsum accusamus repudiandae odit odio?"
         </p>
-        <div className="d-flex align-items-center gap-3">
+        <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava03} alt="avatar" className="rounded" />
           <h6>Steven Crock</h6>
         </div>

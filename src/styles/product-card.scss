@@ -52,3 +52,9 @@
         font-size: 0.7rem;
     }
 }
+
+@media only screen and (max-width:400px){
+    .addToCart__btn{
+        padding: 3px 8px;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Helmet from "../components/Helmet/Helmet";
 import Commonsection from "../components/UI/common-section/CommonSection";
 
@@ -16,9 +16,14 @@ const AllFoods = () => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const searchedProduct = products.filter((item) => {
-    if (searchTerm.value === "") return item;
-    if (item.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    if (searchTerm.value === "") {
       return item;
+    }
+    if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return item;
+    } else {
+      return console.log("not found");
+    }
   });
 
   const productPerPage = 12;
@@ -45,16 +50,16 @@ const AllFoods = () => {
               <div className="search__widget d-flex align-items-center justify-content-between w-50">
                 <input
                   type="text"
-                  placeholder="Buscar..."
+                  placeholder="Bufscar..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <span>
-                  <i class="ri-search-line"></i>
+                  <i className="ri-search-line"></i>
                 </span>
               </div>
             </Col>
-            <Col lg="6" md="6" sm="6" className="mb-5">
+            <Col lg="6" md="6" sm="6" xs="12" className="mb-5">
               <div className="sorting__widget text-end">
                 <select className="w-50">
                   <option>Default</option>

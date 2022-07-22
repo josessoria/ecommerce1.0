@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import Heroimg from "../assets/images/hero.png";
@@ -28,6 +27,7 @@ import networkImg from "../assets/images/network.png";
 
 import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
+
 const featureData = [
   {
     title: "Entrega Comoda",
@@ -47,6 +47,9 @@ const featureData = [
 ];
 
 const Home = () => {
+
+
+
   const [category, setCategory] = useState(`ALL`);
   const [allProducts, setAllProducts] = useState(products);
 

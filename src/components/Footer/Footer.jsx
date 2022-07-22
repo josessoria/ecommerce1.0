@@ -56,7 +56,7 @@ const Footer = () => {
             <p>Subscribite para recibir promociones</p>
             <div className="newsletter">
               <input type="email" placeholder="Ingrese Email"/>
-              <span><i class="ri-send-plane-line"></i></span>
+              <span><i className="ri-send-plane-line"></i></span>
             </div>
           </Col>
         </Row>

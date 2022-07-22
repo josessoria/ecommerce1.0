@@ -12,14 +12,17 @@ import store from "./store/store";
 import { Provider } from "react-redux";
 
 import { BrowserRouter as Router } from "react-router-dom";
+import {AuthProvider} from "./components/context/authContext.jsx"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </Router>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

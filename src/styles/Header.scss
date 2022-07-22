@@ -77,6 +77,12 @@
     box-shadow: 5px 5px 15px -5px #fde4e4;
 }
 
+.user__loged{
+    font-size: 13px;
+}
+
+
+
 @media only screen and (max-width:992px){
 
     .logo img{
@@ -85,7 +91,7 @@
 
     .logo h5{
         font-size: 0.8rem;
-        margin-top: -15px;
+        
     }
 
     .navigation{
@@ -142,5 +148,11 @@
     }
     .logo h5{
         margin-top: -55px;
+    }
+}
+
+@media only screen and (max-width:470px){
+    .user__loged{
+        display: none;
     }
 }

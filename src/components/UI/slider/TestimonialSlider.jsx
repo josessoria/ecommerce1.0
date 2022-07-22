@@ -19,7 +19,7 @@ const TestimonialSlider = () => {
   };
   return (
     <Slider {...settings}>
-      <div class>
+      <div>
         <p className="review__text">
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
           quas ea natus culpa neque odio earum? Nemo quae non omnis aliquid,

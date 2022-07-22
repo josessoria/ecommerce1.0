@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
-import { NavLink, Link } from "react-router-dom";
-import { useSelector,useDispatch } from "react-redux";
+import { NavLink, Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
+
+import { useAuth } from "../context/authContext";
 
 import "../../styles/Header.scss";
 
@@ -28,29 +30,39 @@ const nav__links = [
 ];
 
 const Header = () => {
+  const { user, logout, loading } = useAuth();
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    await logout();
+    navigate("/login");
+  };
+
   const menuRef = useRef(null);
-  const headerRef = useRef(null)
-  const totalQuantity = useSelector(state=> state.cart.totalQuantity )
-  const dispatch = useDispatch()
+  const headerRef = useRef(null);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const dispatch = useDispatch();
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
-  const toggleCart = ()=>{
-    dispatch(cartUiActions.toggle())
-  }
+  const toggleCart = () => {
+    dispatch(cartUiActions.toggle());
+  };
 
-  useEffect(()=>{
-
-    window.addEventListener("scroll",()=>{
-      if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
-        headerRef.current.classList.add("header__shrink")
-      } else{
-        headerRef.current.classList.remove("header__shrink")
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerRef.current.classList.add("header__shrink");
+      } else {
+        headerRef.current.classList.remove("header__shrink");
       }
-    })
-    return ()=> window.removeEventListener("scroll")
-  },[])
+    });
+    return () => window.removeEventListener("scroll");
+  }, []);
 
+  if (loading) return <header className="header" ref={headerRef}></header>;
 
   return (
     <header className="header" ref={headerRef}>
@@ -80,17 +92,30 @@ const Header = () => {
           </div>
 
           {/* ===== nav right icons ===== */}
+
           <div className="nav__right d-flex align-items-center gap-4">
             <span className="cart__icon" onClick={toggleCart}>
               <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span>
             </span>
+            {user ? (
+              <h6 className="user__loged">{user.email}</h6>
+            ) : (
+              <span className="user">
+                <Link to="/login">
+                  <i className="ri-user-line"></i>
+                </Link>
+              </span>
+            )}
 
-            <span className="user">
-              <Link to="/login">
-                <i className="ri-user-line"></i>
-              </Link>
-            </span>
+            {user ? (
+              <span className="cart__icon">
+                <i
+                  className="user__exit ri-logout-box-line"
+                  onClick={handleLogout}
+                ></i>
+              </span>
+            ) : null}
 
             <span className="mobile__menu" onClick={toggleMenu}>
               <i className="ri-menu-line"></i>

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Container } from "reactstrap";
-import logo from "../../assets/images/argentino.svg";
+import logo from "../../assets/images/argentino.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";

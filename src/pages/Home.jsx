@@ -13,7 +13,7 @@ import "../styles/home.scss";
 import FeatureImg01 from "../assets/images/cubiertos.png";
 import FeatureImg02 from "../assets/images/premium.png";
 import FeatureImg03 from "../assets/images/dolar.jpg";
-import Logo from "../assets/images/argentino.svg"
+import Logo from "../assets/images/argentino.png"
 
 import products from "../assets/fake-data/products";
 
@@ -225,8 +225,8 @@ const Home = () => {
       <section className="why__choose-us">
         <Container>
           <Row>
-            <Col lg="6" md="6" className="d-flex">
-              <img src={Logo} alt="why-tasty-treat" className="w-100" />
+            <Col lg="6" md="6" className="d-flex align-items-center">
+              <img src={Logo} alt="why-tasty-treat" className=" img-argentino" />
             </Col>
             <Col lg="6" md="6">
               <div className="why__tasty-treat">

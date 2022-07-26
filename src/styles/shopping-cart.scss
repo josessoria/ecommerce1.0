@@ -78,3 +78,10 @@
     color: #212245;
     font-weight: 600;
 }
+
+
+@media only screen and (max-width:420px){
+    .cart{
+        width:200px;
+    }
+}

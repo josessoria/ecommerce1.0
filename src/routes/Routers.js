@@ -7,7 +7,6 @@ import Checkout from "../pages/Checkout";
 import FoodDetails from "../pages/FoodsDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Creditcard from "../pages/Creditcard.jsx";
 import { ProtectedRoute } from "../components/ProtectedRoutes/ProtectedRoute.js";
 import { ProtectedRouteLoged } from "../components/ProtectedRoutes/ProtectedRouteLoged";
 
@@ -16,11 +15,11 @@ const Routers = () => {
     <Routes>
       <Route path="/" element={<Navigate to={"/home"} />} />
 
-      <Route path="/home" element={<Home />} />
-      <Route path="/foods" element={<AllFoods />} />
+      <Route exact path="/home" element={<Home />} />
+      <Route exact path="/foods" element={<AllFoods />} />
       <Route path="/foods/:id" element={<FoodDetails />} />
       <Route
-        path="/cart"
+        exact path="/cart"
         element={
           <ProtectedRoute>
             <Cart />
@@ -28,7 +27,7 @@ const Routers = () => {
         }
       />
       <Route
-        path="/checkout"
+        exact path="/checkout"
         element={
           <ProtectedRoute>
             <Checkout />
@@ -36,7 +35,7 @@ const Routers = () => {
         }
       />
       <Route
-        path="/login"
+        exact path="/login"
         element={
           <ProtectedRouteLoged>
             <Login />
@@ -44,14 +43,13 @@ const Routers = () => {
         }
       />
       <Route
-        path="/register"
+        exact path="/register"
         element={
           <ProtectedRouteLoged>
             <Register />
           </ProtectedRouteLoged>
         }
       />
-      <Route path="/Creditcard" element={<Creditcard />} />
       <Route path="*" element={<Navigate to={"/home"} />}></Route>
     </Routes>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import logo from "../../assets/images/argentino.svg";
+import logo from "../../assets/images/argentino.png";
 import "../../styles/Footer.scss";
 import { Link } from "react-router-dom";
 

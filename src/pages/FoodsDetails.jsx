@@ -94,14 +94,14 @@ const FoodDetails = () => {
                 <h2 className="product__title mb-3">{title}</h2>
                 <p className="product__price">
                   {" "}
-                  Price: <span>${price}</span>
+                  Precio: <span>${price}</span>
                 </p>
                 <p className="category mb-5">
-                  Category: <span>{category}</span>
+                  Categoría: <span>{category}</span>
                 </p>
 
                 <button onClick={addItem} className="addTOCart__btn">
-                  Add to Cart
+                  Añadir al carro
                 </button>
               </div>
             </Col>
@@ -112,7 +112,7 @@ const FoodDetails = () => {
                   className={` ${tab === "desc" ? "tab__active" : ""}`}
                   onClick={() => setTab("desc")}
                 >
-                  Description
+                  Descripción
                 </h6>
                 <h6
                   className={` ${tab === "rev" ? "tab__active" : ""}`}
@@ -129,21 +129,21 @@ const FoodDetails = () => {
               ) : (
                 <div className="tab__form mb-3">
                   <div className="review pt-5">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">jhon1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
+                    <p className="user__name mb-0">Esteba Luna</p>
+                    <p className="user__email">Estebaluna@gmail.com</p>
+                    <p className="feedback__text">Muy rico, volvería siempre a comprar aquí</p>
                   </div>
 
                   <div className="review">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">jhon1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
+                    <p className="user__name mb-0">Matías Carvallo</p>
+                    <p className="user__email">Matiascarvallo@gmail.com</p>
+                    <p className="feedback__text">De lo mejor de la Argentina! sin dudas el mejor local de asados del mundo!</p>
                   </div>
 
                   <div className="review">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">jhon1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
+                    <p className="user__name mb-0">Jose Soria</p>
+                    <p className="user__email">josesoriap21@gmail.com</p>
+                    <p className="feedback__text">Muy rico todo!</p>
                   </div>
                   <form className="form" onSubmit={submitHandler}>
                     <div className="form__group">
@@ -183,7 +183,7 @@ const FoodDetails = () => {
             </Col>
 
             <Col lg="12" className="mb-5 mt-4">
-              <h2 className="related__Product-title">You might also like</h2>
+              <h2 className="related__Product-title">También te podría gustar:</h2>
             </Col>
 
             {relatedProduct.map((item) => (

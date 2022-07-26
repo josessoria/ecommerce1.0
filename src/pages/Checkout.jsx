@@ -28,7 +28,6 @@ const Checkout = () => {
       celular: enterNumber,
       Provincia: enterCountry,
       direccion: enterCity,
-      postalCode: postalCode,
     };
 
     shippingInfo.push(userShippingAddress);
@@ -83,14 +82,6 @@ const Checkout = () => {
                     placeholder="Direccion"
                     required
                     onChange={(e) => setEnterCity(e.target.value)}
-                  />
-                </div>
-                <div className="form__group">
-                  <input
-                    type="number"
-                    placeholder="Codigo postal"
-                    required
-                    onChange={(e) => setPostalCode(e.target.value)}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">

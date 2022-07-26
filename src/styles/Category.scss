@@ -1,5 +1,6 @@
 .category__item{
-    background-color: #fde4e4;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
     padding: 30px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -15,8 +16,7 @@
         padding: 20px 15px;
     }
     .category__img img{
-        width: 40px;
-        height: 40px;
+        width: 100%;
     }
 
     .category__item h6{

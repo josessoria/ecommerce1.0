@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { Container } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/images/argentino.svg";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 
@@ -22,10 +23,6 @@ const nav__links = [
   {
     display: "Cart",
     path: "/cart",
-  },
-  {
-    display: "Contact",
-    path: "/contact",
   },
 ];
 
@@ -69,8 +66,7 @@ const Header = () => {
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo">
-            <img src={logo} alt="logo" />
-            <h5>Tasty Treat</h5>
+           <Link to="/"><img src={logo} alt="logo" /></Link>
           </div>
 
           {/* ===== Menu ===== */}

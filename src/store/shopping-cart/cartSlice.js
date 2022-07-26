@@ -78,6 +78,13 @@ const cartSlice = createSlice({
         0
       );
     },
+
+    // remove all items
+    removeAllItems(state,action){
+      state.cartItems = []
+      state.totalQuantity = 0
+      state.totalAmount = 0
+    }
   },
 });
 

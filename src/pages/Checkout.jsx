@@ -1,36 +1,87 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../store/shopping-cart/cartSlice";
+import { useNavigate } from "react-router-dom";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
+import Cards from "react-credit-cards";
+import "react-credit-cards/es/styles-compiled.css";
+import Swal from "sweetalert2";
 
 import "../styles/checkout.scss";
 
 const Checkout = () => {
+  const dispatch = useDispatch()
   const [enterName, setEnterName] = useState("");
-  const [enterEmail, setEnterEmail] = useState("");
   const [enterNumber, setEnterNumber] = useState("");
-  const [enterCountry, setEnterCountry] = useState("");
   const [enterCity, setEnterCity] = useState("");
-
+  const navigate = useNavigate();
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const shippingCost = 180;
 
   const totalAmount = cartTotalAmount + Number(shippingCost);
 
+  const [state, setState] = useState({
+    number: "",
+    name: "",
+    expiry: "",
+    cvc: "",
+    focus: "",
+  });
+
+  const handleInputChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFocusChange = (e) => {
+    setState({
+      ...state,
+      focus: e.target.name,
+    });
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
     const userShippingAddress = {
-      name: enterName,
-      email: enterEmail,
-      celular: enterNumber,
-      Provincia: enterCountry,
-      direccion: enterCity,
+      Nombre: enterName,
+      Numero: enterNumber,
+      Direccion: enterCity,
+      numero: state.number,
+      nombre: state.name,
+      expiracion: state.expiry,
+      cvc: state.cvc,
     };
-
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
+    succes();
+    removerTodo();
+  };
+  const succes = () => {
+    Swal.fire({
+      title: "Compra realizada",
+      text: "Realizaste la compra con exito",
+      icon: "success",
+      confirmButtonText: "ok",
+    }).then((respuesta) => {
+      if (respuesta) {
+        ir();
+      }
+    });
+  };
+
+  const removerTodo = () =>{
+    dispatch(
+      cartActions.removeAllItems()
+    )
+  }
+  const ir = () => {
+    navigate("/");
   };
 
   return (
@@ -50,29 +101,12 @@ const Checkout = () => {
                     onChange={(e) => setEnterName(e.target.value)}
                   />
                 </div>
-
                 <div className="form__group">
                   <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    onChange={(e) => setEnterEmail(e.target.value)}
-                  />
-                </div>
-                <div className="form__group">
-                  <input
-                    type="number"
+                    type="string"
                     placeholder="Numero telefono"
                     required
                     onChange={(e) => setEnterNumber(e.target.value)}
-                  />
-                </div>
-                <div className="form__group">
-                  <input
-                    type="text"
-                    placeholder="Provincia"
-                    required
-                    onChange={(e) => setEnterCountry(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
@@ -83,6 +117,62 @@ const Checkout = () => {
                     onChange={(e) => setEnterCity(e.target.value)}
                   />
                 </div>
+                <Cards
+                  number={state.number}
+                  name={state.name}
+                  expiry={state.expiry}
+                  cvc={state.cvc}
+                  focused={state.focus}
+                />
+                <div className="form__group">
+                  <label htmlFor="number">Numero</label>
+                  <input
+                    type="text"
+                    name="number"
+                    maxLength="16"
+                    id="number"
+                    required
+                    onFocus={handleFocusChange}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="form__group">
+                  <label htmlFor="name">Nombre</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    maxLength="35"
+                    onFocus={handleFocusChange}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="form__group">
+                  <label htmlFor="expiry">Fecha de expiracion</label>
+                  <input
+                    type="text"
+                    name="expiry"
+                    maxLength="4"
+                    id="expiry"
+                    required
+                    onFocus={handleFocusChange}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="form__group">
+                  <label htmlFor="cvc">CVC</label>
+                  <input
+                    type="text"
+                    name="cvc"
+                    id="cvc"
+                    maxLength="4"
+                    required
+                    onFocus={handleFocusChange}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
                 <button type="submit" className="addTOCart__btn">
                   Pagar
                 </button>

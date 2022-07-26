@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import ava01 from "../../../assets/images/nicoluna.png";
 import ava02 from "../../../assets/images/matiascarvallo.png";
-import ava03 from "../../../assets/images/ava-3.jpg";
+import ava03 from "../../../assets/images/stevejobs.jpg";
 
 import "../../../styles/slider.scss";
 
@@ -44,13 +44,11 @@ const TestimonialSlider = () => {
       </div>
       <div>
         <p className="review__text">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-          quas ea natus culpa neque odio earum? Nemo quae non omnis aliquid,
-          magni vero asperiores id ipsum accusamus repudiandae odit odio?"
+          "Cuando pasé por argentina, no podía perderme del mejor restaurante de comida Argentina del mundo, muy recomendable, muy nashe todo 📈"
         </p>
         <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava03} alt="avatar" className="rounded" />
-          <h6>Steven Crock</h6>
+          <h6>Steve Jobs</h6>
         </div>
       </div>
     </Slider>

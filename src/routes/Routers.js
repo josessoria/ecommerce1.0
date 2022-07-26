@@ -4,10 +4,10 @@ import Home from "../pages/Home.jsx";
 import AllFoods from "../pages/AllFoods";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
-import Contact from "../pages/Contact";
 import FoodDetails from "../pages/FoodsDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Creditcard from "../pages/Creditcard.jsx";
 import { ProtectedRoute } from "../components/ProtectedRoutes/ProtectedRoute.js";
 import { ProtectedRouteLoged } from "../components/ProtectedRoutes/ProtectedRouteLoged";
 
@@ -51,7 +51,7 @@ const Routers = () => {
           </ProtectedRouteLoged>
         }
       />
-      <Route path="/Contact" element={<Contact />} />
+      <Route path="/Creditcard" element={<Creditcard />} />
     </Routes>
   );
 };

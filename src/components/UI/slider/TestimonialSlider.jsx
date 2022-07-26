@@ -48,7 +48,7 @@ const TestimonialSlider = () => {
         </p>
         <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava03} alt="avatar" className="rounded" />
-          <h6>Steve Jobs</h6>
+          <h6>Bill Gates</h6>
         </div>
       </div>
     </Slider>

@@ -52,6 +52,7 @@ const Routers = () => {
         }
       />
       <Route path="/Creditcard" element={<Creditcard />} />
+      <Route path="*" element={<Navigate to={"/home"} />}></Route>
     </Routes>
   );
 };

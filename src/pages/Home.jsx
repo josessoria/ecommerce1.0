@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import Heroimg from "../assets/images/hero.png";
+
+import burgermain from "../assets/images/SVG/5.svg";
 import "../styles/Hero-section.scss";
 import { Link } from "react-router-dom";
 
@@ -12,6 +13,7 @@ import "../styles/home.scss";
 import FeatureImg01 from "../assets/images/service-01.png";
 import FeatureImg02 from "../assets/images/service-02.png";
 import FeatureImg03 from "../assets/images/service-03.png";
+import Logo from "../assets/images/argentino.svg"
 
 import products from "../assets/fake-data/products";
 
@@ -23,10 +25,9 @@ import ProductCard from "../components/UI/Product-card/ProductCard.jsx";
 
 import WhyImg from "../assets/images/location.png";
 
-import networkImg from "../assets/images/network.png";
+import networkImg from "../assets/images/layer.svg";
 
 import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
-
 
 const featureData = [
   {
@@ -35,7 +36,7 @@ const featureData = [
     desc: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, exercitationem.`,
   },
   {
-    title: "Cena Veloz",
+    title: "Comida Veloz",
     imgUrl: FeatureImg02,
     desc: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, exercitationem.`,
   },
@@ -47,15 +48,12 @@ const featureData = [
 ];
 
 const Home = () => {
-
-
-
   const [category, setCategory] = useState(`ALL`);
   const [allProducts, setAllProducts] = useState(products);
 
   const [hotPizza, setHotPizza] = useState([]);
   useEffect(() => {
-    const filteredPizza = products.filter((item) => item.category === "Pizza");
+    const filteredPizza = products.filter((item) => item.category === "Carne");
     const slicePizza = filteredPizza.slice(0, 4);
     setHotPizza(slicePizza);
   }, []);
@@ -65,21 +63,21 @@ const Home = () => {
       setAllProducts(products);
     }
 
-    if (category === "BURGER") {
+    if (category === "CARNE") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Burger"
+        (item) => item.category === "Carne"
       );
       setAllProducts(filteredProducts);
     }
-    if (category === "PIZZA") {
+    if (category === "VINOS") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Pizza"
+        (item) => item.category === "Vino"
       );
       setAllProducts(filteredProducts);
     }
-    if (category === "BREAD") {
+    if (category === "ENSALADA") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Bread"
+        (item) => item.category === "Ensaladas"
       );
       setAllProducts(filteredProducts);
     }
@@ -127,7 +125,7 @@ const Home = () => {
             </Col>
             <Col lg="6" md="6">
               <div className="hero__img">
-                <img src={Heroimg} alt="Hero-img" className="w-100" />
+                <img src={burgermain} alt="Hero-img" className="w-100" />
               </div>
             </Col>
           </Row>
@@ -159,7 +157,7 @@ const Home = () => {
 
             {featureData.map((item, index) => (
               <Col lg="4" md="4" sm="6" xs="6" key={index} className="mt-5">
-                <div className="feature__item text-center px-5 py-3">
+                <div className="feature__item text-center px-50 py-3">
                   <img
                     src={item.imgUrl}
                     alt="feature-img"
@@ -178,7 +176,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2> Comidas Favoritas </h2>
+              <h2> Nuestras Comidas </h2>
             </Col>
             <Col lg="12">
               <div className="food_category d-flex align-items-center justify-content-center gap-2">
@@ -191,31 +189,30 @@ const Home = () => {
                   All
                 </button>
                 <button
-                  className={`d-flex align-items-center gap-2 ${
-                    category === "BURGER" ? `foodBtnActive` : ""
+                  className={`d-flex align-items-center justify-content-center gap-2 ${
+                    category === "CARNE" ? `foodBtnActive` : ""
                   }`}
-                  onClick={() => setCategory("BURGER")}
+                  onClick={() => setCategory("CARNE")}
                 >
-                  <img src={foodCategoryimg01} alt="" />
-                  Hamburguesas
+
+                  Carnes
                 </button>
                 <button
-                  className={`d-flex align-items-center gap-2 ${
-                    category === "PIZZA" ? `foodBtnActive` : ""
+                  className={`d-flex align-items-center justify-content-center gap-2 ${
+                    category === "VINOS" ? `foodBtnActive` : ""
                   }`}
-                  onClick={() => setCategory("PIZZA")}
+                  onClick={() => setCategory("VINOS")}
                 >
-                  <img src={foodCategoryimg02} alt="" />
-                  Pizzas
+
+                  Vinos
                 </button>
                 <button
-                  className={`d-flex align-items-center gap-2 ${
-                    category === "BREAD" ? `foodBtnActive` : ""
+                  className={`d-flex align-items-center justify-content-center gap-2 ${
+                    category === "ENSALADA" ? `foodBtnActive` : ""
                   }`}
-                  onClick={() => setCategory("BREAD")}
+                  onClick={() => setCategory("ENSALADA")}
                 >
-                  <img src={foodCategoryimg03} alt="" />
-                  Panes
+                  Ensaladas
                 </button>
               </div>
             </Col>
@@ -231,19 +228,17 @@ const Home = () => {
       <section className="why__choose-us">
         <Container>
           <Row>
-            <Col lg="6" md="6">
-              <img src={WhyImg} alt="why-tasty-treat" className="w-100" />
+            <Col lg="6" md="6" className="d-flex">
+              <img src={Logo} alt="why-tasty-treat" className="w-100" />
             </Col>
             <Col lg="6" md="6">
               <div className="why__tasty-treat">
                 <h2 className="tasty__treat-title mb-4">
-                  Why <span>Tasty Treat?</span>
+                  ¿Por qué <span>nosotros?</span>
                 </h2>
                 <p className="tasty__treat-desc">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-                  voluptas iure consectetur exercitationem architecto minima et
-                  ipsam in alias temporibus dicta, accusamus, error libero
-                  maiores atque magnam laborum fuga illum?
+                  Llevamos el sabor de cada plato de carne y de mesa argentina a
+                  tu casa en cualquier momento, 10+ años en el paladar de cada Argentino 
                 </p>
 
                 <ListGroup className="mt-4">
@@ -288,7 +283,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center mb-5">
-              <h2>Hot Pizza</h2>
+              <h2>Exclusivo</h2>
             </Col>
 
             {hotPizza.map((item) => (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
+import logo from "../../assets/images/argentino.svg";
 import "../../styles/Footer.scss";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,6 @@ const Footer = () => {
           <Col lg="3" md="4" sm="6">
             <div className="footer__logo text-start">
               <img src={logo} alt="logo" />
-              <h5 className="footer__title">Tasty Treat</h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos a
                 architecto.
@@ -39,7 +38,7 @@ const Footer = () => {
             <h5>Contactos</h5>
             <ListGroup className="deliver__time-list">
               <ListGroupItem className="delivery__time-item border-0 ps-0">
-                <p>Location: Tucuman, Yerba Buena, Aconquija 1020</p>
+                <p>Ubicación: Tucuman, Yerba Buena, Aconquija 1020</p>
               </ListGroupItem>
               <ListGroupItem className="delivery__time-item border-0 ps-0">
                 <span>Numero: +54 381-222-4545</span>

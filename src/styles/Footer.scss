@@ -1,11 +1,11 @@
 .footer{
     padding-top: 50px;
     padding-bottom: 30px;
-    background-color: #fde4e4;
+    background-color: #d6d6d6;
 }
 
 .footer__logo img{
-    width: calc(100% - 80%);
+    width: calc(100% - 30%);
     margin-bottom: 5px;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .newsletter span{
-    background:#df2020;
+    background:#000000;
     padding: 5px 30px;
     border-radius: 5px;
 }
@@ -79,7 +79,7 @@
 
 .social_links span i{
     padding: 5px;
-    background: #df2020;
+    background: #000000;
     color: white;
     border-radius: 50%;
 }
@@ -88,7 +88,7 @@
     text-align:center;
     __text{
     font-size: .8rem;
-    color: #df2020;
+    color: #000000;
 }
 
 @media only screen and (max-width:992px){

@@ -2,6 +2,7 @@ import React from "react";
 
 import "../../../styles/product-card.scss";
 
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
@@ -20,6 +21,9 @@ const ProductCard = (props) => {
       })
     );
   };
+  
+
+  const notify = () => toast.success("Se agregó " +  title + " correctamente");
 
   return (
     <div className="product__item">
@@ -35,9 +39,16 @@ const ProductCard = (props) => {
         </h5>
         <div className="d-flex align-items-center justify-content-around">
           <span className="product__price">${price}</span>
-          <button className="addToCart__btn" onClick={addToCart}>
+          <button
+            className="addToCart__btn"
+            onClick={() => {
+              addToCart();
+              notify();
+            }}
+          >
             Comprar
           </button>
+          <Toaster position="bottom-right" />
         </div>
       </div>
     </div>

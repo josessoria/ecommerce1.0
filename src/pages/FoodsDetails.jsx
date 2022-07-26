@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import toast, { Toaster } from "react-hot-toast";
 import products from "../assets/fake-data/products";
 import { useParams } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
@@ -52,6 +53,8 @@ const FoodDetails = () => {
     window.scrollTo(0, 0);
   }, [product]);
 
+
+  const notify = () => toast.success("Se agregó " +  title + " correctamente");
   return (
     <Helmet title="Product-details">
       <CommonSection title={title} />
@@ -100,9 +103,16 @@ const FoodDetails = () => {
                   Categoría: <span>{category}</span>
                 </p>
 
-                <button onClick={addItem} className="addTOCart__btn">
+                <button
+                  onClick={() => {
+                    addItem();
+                    notify();
+                  }}
+                  className="addTOCart__btn"
+                >
                   Añadir al carro
                 </button>
+                <Toaster position="bottom-right" />
               </div>
             </Col>
 
@@ -131,13 +141,18 @@ const FoodDetails = () => {
                   <div className="review pt-5">
                     <p className="user__name mb-0">Esteba Luna</p>
                     <p className="user__email">Estebaluna@gmail.com</p>
-                    <p className="feedback__text">Muy rico, volvería siempre a comprar aquí</p>
+                    <p className="feedback__text">
+                      Muy rico, volvería siempre a comprar aquí
+                    </p>
                   </div>
 
                   <div className="review">
                     <p className="user__name mb-0">Matías Carvallo</p>
                     <p className="user__email">Matiascarvallo@gmail.com</p>
-                    <p className="feedback__text">De lo mejor de la Argentina! sin dudas el mejor local de asados del mundo!</p>
+                    <p className="feedback__text">
+                      De lo mejor de la Argentina! sin dudas el mejor local de
+                      asados del mundo!
+                    </p>
                   </div>
 
                   <div className="review">
@@ -183,7 +198,9 @@ const FoodDetails = () => {
             </Col>
 
             <Col lg="12" className="mb-5 mt-4">
-              <h2 className="related__Product-title">También te podría gustar:</h2>
+              <h2 className="related__Product-title">
+                También te podría gustar:
+              </h2>
             </Col>
 
             {relatedProduct.map((item) => (

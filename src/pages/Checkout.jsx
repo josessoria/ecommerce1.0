@@ -12,7 +12,6 @@ const Checkout = () => {
   const [enterNumber, setEnterNumber] = useState("");
   const [enterCountry, setEnterCountry] = useState("");
   const [enterCity, setEnterCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
 
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);

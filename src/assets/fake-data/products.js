@@ -12,7 +12,6 @@ import product_03_image_02 from "../images/vinotoro.jpg";
 import product_03_image_03 from "../images/product_3.3.jpg";
 
 import product_04_image_01 from "../images/brochetas.jpg";
-import product_04_image_02 from "../images/product_4.2.jpg";
 import product_04_image_03 from "../images/product_4.3.png";
 
 import product_05_image_01 from "../images/malbec.png";
@@ -21,7 +20,6 @@ import product_05_image_03 from "../images/product_09.jpg";
 
 import product_06_image_01 from "../images/jacobcrew.jpg";
 import product_06_image_02 from "../images/talsiker.jpg";
-import product_06_image_03 from "../images/bread(3).png";
 
 const products = [
   {

@@ -1,10 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
-import ava01 from "../../../assets/images/ava-1.jpg";
-import ava02 from "../../../assets/images/ava-2.jpg";
+import ava01 from "../../../assets/images/nicoluna.png";
+import ava02 from "../../../assets/images/matiascarvallo.png";
 import ava03 from "../../../assets/images/ava-3.jpg";
 
-import "../../../styles/slider.scss"
+import "../../../styles/slider.scss";
 
 const TestimonialSlider = () => {
   const settings = {
@@ -21,24 +21,25 @@ const TestimonialSlider = () => {
     <Slider {...settings}>
       <div>
         <p className="review__text">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-          quas ea natus culpa neque odio earum? Nemo quae non omnis aliquid,
-          magni vero asperiores id ipsum accusamus repudiandae odit odio?"
+          "De los mejores lugares que vi en mi vida, la comida mas rica ¡DEL
+          MUNDO! no hay nada que lo compare, la verdad excelente atencion y
+          buenos precios, tengo muchas ganas de volver y probar todos los
+          vinos!"
         </p>
-        <div className="slider__content d-flex align-items-center gap-3"> 
+        <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava01} alt="avatar" className="rounded" />
-          <h6>Jhon Doe</h6>
+          <h6>Nicolás Esteban Luna</h6>
         </div>
       </div>
       <div>
         <p className="review__text">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-          quas ea natus culpa neque odio earum? Nemo quae non omnis aliquid,
-          magni vero asperiores id ipsum accusamus repudiandae odit odio?"
+          "Muy pero muy rico todo!, la comida y los precios los mejores que he
+          visto, y por mi edad puedo confirmar que es el mejor lugar de comidas
+          Argentinas que existe! Felicitaciones!"
         </p>
         <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava02} alt="avatar" className="rounded" />
-          <h6>Mitchell Marsh</h6>
+          <h6>Matías Carvallo</h6>
         </div>
       </div>
       <div>
